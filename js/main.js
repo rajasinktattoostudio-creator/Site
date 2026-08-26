@@ -25,6 +25,12 @@ const GALLERY_IMAGES = [
   "assets/images/gallery-18.jpg",
   "assets/images/gallery-19.jpg",
   "assets/images/gallery-20.jpg",
+  "assets/images/gallery-21.jpg",
+  "assets/images/gallery-22.jpg",
+  "assets/images/gallery-23.jpg",
+  "assets/images/gallery-24.jpg",
+  "assets/images/gallery-25.jpg",
+  "assets/images/gallery-26.jpg",
 ];
 
 document.getElementById("year").textContent = new Date().getFullYear();
