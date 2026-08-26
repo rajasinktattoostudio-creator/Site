@@ -21,4 +21,6 @@
  * Leave it as an empty array to keep showing the "Read our reviews on
  * Google" card only.
  */
-const REVIEWS = [];
+const REVIEWS = [
+  { author: "Niccolò Sacco", rating: 5, text: "This place is amazing, The people that work here are really friendly and professional. I think the best tattoo shop where I've been" },
+];
