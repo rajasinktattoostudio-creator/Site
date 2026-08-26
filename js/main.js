@@ -37,14 +37,17 @@ window.addEventListener("scroll", () => {
 
 const navToggle = document.getElementById("nav-toggle");
 const navLinks = document.getElementById("nav-links");
+const navClose = document.getElementById("nav-close");
+function closeNav(){
+  navLinks.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
 navToggle.addEventListener("click", () => {
   const open = navLinks.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(open));
 });
-navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-  navLinks.classList.remove("is-open");
-  navToggle.setAttribute("aria-expanded", "false");
-}));
+navClose.addEventListener("click", closeNav);
+navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
 
 /* ---------- Gallery render + lightbox ---------- */
 const galleryGrid = document.getElementById("gallery-grid");
@@ -90,23 +93,35 @@ const reviewsContent = document.getElementById("reviews-content");
 const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/Tq7LDhvyWvr31vrV8";
 
 if (typeof REVIEWS !== "undefined" && REVIEWS.length > 0) {
-  const grid = document.createElement("div");
-  grid.className = "review-grid";
-  REVIEWS.slice(0, 6).forEach((r) => {
-    const card = document.createElement("div");
-    card.className = "review-card";
-    card.innerHTML = `
-      <div class="review-stars">${"★".repeat(r.rating || 5)}</div>
-      <p>"${r.text}"</p>
-      <p class="review-author">${r.author}</p>
-    `;
-    grid.appendChild(card);
-  });
-  reviewsContent.appendChild(grid);
-  const more = document.createElement("p");
-  more.style.marginTop = "2rem";
-  more.innerHTML = `<a class="btn btn-ghost" href="${GOOGLE_REVIEWS_URL}" target="_blank" rel="noopener">Read all reviews on Google</a>`;
-  reviewsContent.appendChild(more);
+  const featured = REVIEWS[0];
+  const card = document.createElement("div");
+  card.className = "review-cta-card review-cta-card--featured";
+  card.innerHTML = `
+    <div class="review-stars">${"★".repeat(featured.rating || 5)}</div>
+    <p class="review-quote">"${featured.text}"</p>
+    <p class="review-author">— ${featured.author}</p>
+    <div class="review-footer">
+      <p class="review-footer-text">See what more clients are saying, straight from Google.</p>
+      <a class="btn btn-brass btn-sm" href="${GOOGLE_REVIEWS_URL}" target="_blank" rel="noopener">Read our reviews on Google</a>
+    </div>
+  `;
+  reviewsContent.appendChild(card);
+
+  if (REVIEWS.length > 1) {
+    const grid = document.createElement("div");
+    grid.className = "review-grid";
+    REVIEWS.slice(1, 6).forEach((r) => {
+      const c = document.createElement("div");
+      c.className = "review-card";
+      c.innerHTML = `
+        <div class="review-stars">${"★".repeat(r.rating || 5)}</div>
+        <p>"${r.text}"</p>
+        <p class="review-author">${r.author}</p>
+      `;
+      grid.appendChild(c);
+    });
+    reviewsContent.appendChild(grid);
+  }
 } else {
   reviewsContent.innerHTML = `
     <div class="review-cta-card">
