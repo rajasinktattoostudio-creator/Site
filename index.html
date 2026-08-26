@@ -38,6 +38,7 @@
       <span>Rajas Ink</span>
     </a>
     <nav class="nav-links" id="nav-links">
+      <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
       <a href="#studio">Studio</a>
       <a href="#artists">Artists</a>
       <a href="#gallery">Gallery</a>
@@ -104,35 +105,53 @@
 
   <div class="artist-grid">
     <article class="artist-card reveal">
-      <div class="artist-photo"><img src="assets/images/artist-toley.jpg" alt="Toley, resident tattoo artist at Rajas Ink"></div>
-      <p class="artist-role">Resident artist</p>
-      <h3>Toley</h3>
-      <p>With years of professional experience, our first resident artist is known for clean line work, strong composition, and adaptability across styles. Trained in Bali, their work reflects patience, balance, and attention to detail, ensuring each tattoo feels personal, timeless, and well executed.</p>
-      <div class="artist-actions">
-        <a href="https://wa.link/d57ycj" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Toley</a>
-        <a href="https://www.instagram.com/rajasinktattoo/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Instagram</a>
+      <div class="artist-photo">
+        <img src="assets/images/artist-toley.jpg" alt="Toley, resident tattoo artist at Rajas Ink">
+        <span class="artist-index">01</span>
+        <div class="artist-photo-overlay">
+          <p class="artist-role">Resident artist</p>
+          <h3>Toley</h3>
+        </div>
+      </div>
+      <div class="artist-body">
+        <p>With years of professional experience, our first resident artist is known for clean line work, strong composition, and adaptability across styles. Trained in Bali, their work reflects patience, balance, and attention to detail, ensuring each tattoo feels personal, timeless, and well executed.</p>
+        <div class="artist-actions">
+          <a href="https://wa.link/d57ycj" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Toley</a>
+        </div>
       </div>
     </article>
 
     <article class="artist-card reveal">
-      <div class="artist-photo"><img src="assets/images/artist-dex-guns.jpg" alt="Dex Guns, resident tattoo artist at Rajas Ink"></div>
-      <p class="artist-role">Resident artist</p>
-      <h3>Dex Guns</h3>
-      <p>Our second artist brings a deep understanding of skin, flow, and symbolism. With extensive experience tattooing both locals and international clients, their approach focuses on collaboration and precision. Every piece is carefully planned to age well and honor the client's vision.</p>
-      <div class="artist-actions">
-        <a href="https://wa.link/l9xoqo" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Dex Guns</a>
-        <a href="https://www.instagram.com/guntattoodex/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Instagram</a>
+      <div class="artist-photo">
+        <img src="assets/images/artist-dex-guns.jpg" alt="Dex Guns, resident tattoo artist at Rajas Ink">
+        <span class="artist-index">02</span>
+        <div class="artist-photo-overlay">
+          <p class="artist-role">Resident artist</p>
+          <h3>Dex Guns</h3>
+        </div>
+      </div>
+      <div class="artist-body">
+        <p>Our second artist brings a deep understanding of skin, flow, and symbolism. With extensive experience tattooing both locals and international clients, their approach focuses on collaboration and precision. Every piece is carefully planned to age well and honor the client's vision.</p>
+        <div class="artist-actions">
+          <a href="https://wa.link/l9xoqo" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Dex Guns</a>
+        </div>
       </div>
     </article>
 
     <article class="artist-card reveal">
-      <div class="artist-photo"><img src="assets/images/artist-dewa-koke.jpg" alt="Dewa Koke, guest tattoo artist at Rajas Ink"></div>
-      <p class="artist-role">Guest artist</p>
-      <h3>Dewa Koke</h3>
-      <p>With strong roots in Balinese culture and extensive experience, Dewa creates tattoos that feel personal, balanced, and intentional. Each piece is developed in collaboration with the client, resulting in work that carries depth, clarity, and lasting significance.</p>
-      <div class="artist-actions">
-        <a href="https://wa.link/ritreb" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Dewa Koke</a>
-        <a href="https://www.instagram.com/koketattoo/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Instagram</a>
+      <div class="artist-photo">
+        <img src="assets/images/artist-dewa-koke.jpg" alt="Dewa Koke, guest tattoo artist at Rajas Ink">
+        <span class="artist-index">03</span>
+        <div class="artist-photo-overlay">
+          <p class="artist-role">Guest artist</p>
+          <h3>Dewa Koke</h3>
+        </div>
+      </div>
+      <div class="artist-body">
+        <p>With strong roots in Balinese culture and extensive experience, Dewa creates tattoos that feel personal, balanced, and intentional. Each piece is developed in collaboration with the client, resulting in work that carries depth, clarity, and lasting significance.</p>
+        <div class="artist-actions">
+          <a href="https://wa.link/ritreb" target="_blank" rel="noopener" class="btn btn-brass btn-sm">Book Dewa Koke</a>
+        </div>
       </div>
     </article>
   </div>
@@ -147,6 +166,9 @@
   <div class="gallery-grid" id="gallery-grid">
     <!-- images injected by script.js from GALLERY_IMAGES -->
   </div>
+  <p class="gallery-more reveal">
+    <a href="https://www.instagram.com/rajasinktattoo/" target="_blank" rel="noopener" class="btn btn-ghost">See more on Instagram</a>
+  </p>
 </section>
 
 <div class="lightbox" id="lightbox">
