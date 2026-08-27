@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://website-chi-eight-60.vercel.app/sitemap.xml
