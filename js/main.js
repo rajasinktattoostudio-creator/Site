@@ -1,36 +1,36 @@
 /* ============================================================
    Gallery images
    Your own photos, stored locally in assets/images/. Add more by
-   dropping a file in that folder and adding its path below — see
-   README.md.
+   dropping a file in that folder and adding an {src, alt} entry
+   below — see README.md.
    ============================================================ */
 const GALLERY_IMAGES = [
-  "assets/images/gallery-01.jpg",
-  "assets/images/gallery-02.jpg",
-  "assets/images/gallery-03.jpg",
-  "assets/images/gallery-04.jpg",
-  "assets/images/gallery-05.jpg",
-  "assets/images/gallery-06.jpg",
-  "assets/images/gallery-07.jpg",
-  "assets/images/gallery-08.jpg",
-  "assets/images/gallery-09.jpg",
-  "assets/images/gallery-10.jpg",
-  "assets/images/gallery-11.jpg",
-  "assets/images/gallery-12.jpg",
-  "assets/images/gallery-13.jpg",
-  "assets/images/gallery-14.jpg",
-  "assets/images/gallery-15.jpg",
-  "assets/images/gallery-16.jpg",
-  "assets/images/gallery-17.jpg",
-  "assets/images/gallery-18.jpg",
-  "assets/images/gallery-19.jpg",
-  "assets/images/gallery-20.jpg",
-  "assets/images/gallery-21.jpg",
-  "assets/images/gallery-22.jpg",
-  "assets/images/gallery-23.jpg",
-  "assets/images/gallery-24.jpg",
-  "assets/images/gallery-25.jpg",
-  "assets/images/gallery-26.jpg",
+  { src: "assets/images/gallery-01.jpg", alt: "Balinese barong tattoo on the back, black and grey" },
+  { src: "assets/images/gallery-02.jpg", alt: "Serpent and cross tattoo on the lower leg" },
+  { src: "assets/images/gallery-03.jpg", alt: "Small blue forget-me-not flowers tattoo on the forearm" },
+  { src: "assets/images/gallery-04.jpg", alt: "Balinese barong mask tattoo on the stomach" },
+  { src: "assets/images/gallery-05.jpg", alt: "Ram skull tattoo on the upper back" },
+  { src: "assets/images/gallery-06.jpg", alt: "Tribal shark tattoo on the ribs" },
+  { src: "assets/images/gallery-07.jpg", alt: "Mandala tattoo covering the top of the head" },
+  { src: "assets/images/gallery-08.jpg", alt: "Dotwork ornamental tattoo on the lower back" },
+  { src: "assets/images/gallery-09.jpg", alt: "Black and grey mandala tattoo on the arm" },
+  { src: "assets/images/gallery-10.jpg", alt: "Realistic portrait tattoo of a woman's face on the forearm" },
+  { src: "assets/images/gallery-11.jpg", alt: "Japanese oni samurai tattoo on the shoulder" },
+  { src: "assets/images/gallery-12.jpg", alt: "Black and grey realism portrait tattoo" },
+  { src: "assets/images/gallery-13.jpg", alt: "Sun and clouds armband tattoo in red and black" },
+  { src: "assets/images/gallery-14.jpg", alt: "Circular blackletter script tattoo on the arm" },
+  { src: "assets/images/gallery-15.jpg", alt: "Fine line butterfly tattoo on the upper back" },
+  { src: "assets/images/gallery-16.jpg", alt: "Books and feather tattoo on the forearm" },
+  { src: "assets/images/gallery-17.jpg", alt: "Matching geometric eye tattoos on both knees" },
+  { src: "assets/images/gallery-18.jpg", alt: "Floral sleeve tattoo on the forearm" },
+  { src: "assets/images/gallery-19.jpg", alt: "Arabic script tattoo on the ribs" },
+  { src: "assets/images/gallery-20.jpg", alt: "Koi fish and lotus tattoo along the spine" },
+  { src: "assets/images/gallery-21.jpg", alt: "Balinese barong mask tattoo on the forearm" },
+  { src: "assets/images/gallery-22.jpg", alt: "Dotwork mandala tattoo on the calf" },
+  { src: "assets/images/gallery-23.jpg", alt: "Lotus and crescent moon tattoo on the back of the neck" },
+  { src: "assets/images/gallery-24.jpg", alt: "Dice, cards and cash tattoo on the leg" },
+  { src: "assets/images/gallery-25.jpg", alt: "Script lettering tattoo on the head" },
+  { src: "assets/images/gallery-26.jpg", alt: "Floral tattoo on the thigh" },
 ];
 
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -57,11 +57,11 @@ navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav
 
 /* ---------- Gallery render + lightbox ---------- */
 const galleryGrid = document.getElementById("gallery-grid");
-GALLERY_IMAGES.forEach((src) => {
+GALLERY_IMAGES.forEach(({ src, alt }) => {
   const img = document.createElement("img");
   img.src = src;
   img.loading = "lazy";
-  img.alt = "Tattoo by Rajas Ink, Ubud";
+  img.alt = alt;
   galleryGrid.appendChild(img);
 });
 
@@ -70,6 +70,7 @@ const lightboxImg = document.getElementById("lightbox-img");
 galleryGrid.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     lightboxImg.src = e.target.src;
+    lightboxImg.alt = e.target.alt;
     lightbox.classList.add("is-open");
   }
 });
